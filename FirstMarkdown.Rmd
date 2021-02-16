@@ -24,7 +24,7 @@ Use 2 or more blank spaces at the end of a single-spaced line.
 
 ### Third-level header
 
-#Basic text formatting
+# Basic text formatting
 
 italic *text* like this
 
@@ -35,3 +35,129 @@ subscript~text~ like this
 superscript^text^ like this
 
 strikesthrough ~~text~~ like this
+
+# Lists
+
+## Unordered Lists
+
+* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b
+    
+## Ordered Lists
+
+1. Item 1
+2. Item 2
+3. Item 3
+    + Item 3a
+    + Item 3b
+    
+# Fencing
+
+In line fencing with a backtick `to show anything in plain text with *no* formatting` which can be useful for many things.
+
+In line execution of R inside the backticks by inserting R as the first element `r 3 + pi`
+
+In line execution of R inside the backticks by inserting R as the first element `3 + pi`
+
+3 backticks for a whole section of plain text
+
+```
+everything in here is in plain text.
+even single lines.
+
+useful especially when showing other coding instructions.
+```
+
+# Block Quotes with `>`
+
+> To be or not to be, that is the question.
+Whether tis nobler... blah blah blah
+
+# Spacer line with 3 or more understcores
+
+___
+
+Adds a line between text...
+
+# Links
+http://example.com
+
+[Linked phrase](http://example.com)
+
+A [linked phrase][id]. 
+
+At the bottom of the document:
+
+[id]: http://example.com/ "Title"
+Images
+
+# Images
+`![alt text](http://example.com/logo.png)`
+
+`![alt text](figures/img.png)`
+
+# Table
+First Header  | Second Header
+------------- | -------------
+Content Cell  | **Formatted Text**
+Content Cell  | *Formatted Text*
+
+# LaTek code for equations
+
+We set off equations with `$` for brackets.
+
+## In-line versus stand-alone equations
+
+These equations such as $a = 3 + 4$ will appear inside a single line of text.
+
+These equations such as $$a = 3 + 4$$ will appear in a separate line of their own.
+
+## Subscripts
+
+$$H_0 = Z_{a + b}$$
+
+## Superscripts
+
+$$S = cA^z$$
+
+Elements can be coupled and nested
+
+$$S=cA^z_1 +z_{2+x}$$
+
+## Fractions and Greek symbols
+
+$$\alpha = \frac{\beta}{\delta + \gamma_x}$$
+
+## Summation Signs
+
+$$z= \sum_{i=1}^X{K}$$
+## Escape the backslash with a custom term
+
+$$\backslash \alpha \le b \backslash$$
+
+## Rendering plaintext in a LaTex equation
+
+$$P(occurance of Species A) = Z$$
+
+$$P(\mbox{Occurence of species A}) = Z$$
+
+#R in Markdown
+
+```{r,echo=TRUE,eval=TRUE}
+# Don't forget to start with comments!
+# Preliminaries
+library(ggplot2)
+
+pred <- 1:10 #Vector of 10 integers
+res <- runif(10) # Random Uniform Values
+
+# Print the random numbers
+print(res)
+
+#plot the graph
+qplot(x=pred,y=res)
+```
+
+Now back to writing text in our markdown document, including latex equations if we need them such as $a+b$ inserted in the middle of my sentence
