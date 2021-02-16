@@ -1,0 +1,37 @@
+---
+title: "My First Mardown Document"
+author: "Ethan Dean"
+date: "16 Feburary 2021"
+output:
+  html_document: 
+    theme: spacelab
+  pdf_document: default
+---
+
+Add text here. Just use it like a typewriter, and add as much or as little as you like.
+
+New text appears here in a separate paragraph.
+
+Ethan Dean  
+Department of Biology  
+University of Vermont  
+
+Use 2 or more blank spaces at the end of a single-spaced line.
+
+# First-level header
+
+## Second-level header
+
+### Third-level header
+
+#Basic text formatting
+
+italic *text* like this
+
+bold **text** like this
+
+subscript~text~ like this
+
+superscript^text^ like this
+
+strikesthrough ~~text~~ like this
