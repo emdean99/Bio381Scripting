@@ -5,6 +5,7 @@
 
 rainfall <- runif(10) # total annual rainfall
 biomass <- runif(10) 
+head(biomass)
 print(rainfall)
 rainfall
 head(rainfall)
