@@ -3,9 +3,9 @@ title: "My First Mardown Document"
 author: "Ethan Dean"
 date: "16 Feburary 2021"
 output:
+  pdf_document: default
   html_document: 
     theme: spacelab
-  pdf_document: default
 ---
 
 Add text here. Just use it like a typewriter, and add as much or as little as you like.
