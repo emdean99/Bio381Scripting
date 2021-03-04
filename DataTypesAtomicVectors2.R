@@ -44,7 +44,7 @@ rep(x=my_vec,each=my_vec) # why?
 
 #using seq
 seq(from=2,to=4)
-2:4 # very commen in r programming
+2:4 # very common in r programming
 seq(from=2,to=4,by=0.5)
 x <- seq(from=2,to=4,length=7)
 my_vec <- seq(1:length(x))
