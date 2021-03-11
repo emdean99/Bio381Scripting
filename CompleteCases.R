@@ -58,4 +58,48 @@ m[m[, 'Site1']<3,]
 
 # Set up logical for columns
 m['SpeciesA',] < 5
-m[m['SpeciesA',] < 5]
+m[, m['SpeciesA',] < 5]
+
+# Combine both
+m[m[, 'Site1']<3, m['SpeciesA',] < 5]
+
+# Caution when subcript a matrix can convert to a vector
+z <- m[1,]
+z
+str(z)
+
+# use the drop = FALSE
+z2 <- m[1,,drop=FALSE]
+print(z2)
+str(z2)
+m[2]
+
+# use read.table to import a .csv file as a data frame
+my_data <- read.table(file='C:/Users/deane/OneDrive/Desktop/OriginalDataCleaned.csv',
+                      header=TRUE,
+                      sep=',',
+                      comment.char='#')
+
+str(my_data)
+
+
+# use a relative path statement to get to the data # use .. but did not work for me
+my_data <- read.table(file='C:/Users/deane/OneDrive/Desktop/OriginalDataCleaned.csv',
+                      header=TRUE,
+                      sep=',',
+                      comment.char='#')
+
+my_data$newVar <- runif(4)
+str(my_data)
+
+# use this to write a .csv to disk
+write.table(x=my_data,
+            file='C:/Users/deane/OneDrive/Desktop/ModifiedData.csv',
+            sep=',')
+
+# use instead saveRDS() function to create a binary object
+# that R can read and use
+# use optional .RDS suffix for clarity
+saveRDS(my_data,file='C:/Users/deane/OneDrive/Desktop/mydata.RDS')
+
+z <- readRDS(file='C:/Users/deane/OneDrive/Desktop/mydata.RDS')
