@@ -274,3 +274,4 @@ p_density <- dgamma(x=x,
                     shape = z$estimate['shape'],
                     rate = z$estimate['rate'])
 qplot(x,p_density,geom="line") + annotate(geom='point',x=frog_data,y=0.001, color="red")
+
