@@ -193,3 +193,4 @@ z1 <- rep("non_sig", 1000)
 z1[p_vals<= 0.025] <- "lower_tail"
 z1[p_vals>= 0.975] <- "upper_tail"
 table(z1)
+
