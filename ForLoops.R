@@ -149,7 +149,7 @@ ran_walk <- function(times=100,
     n[i + 1] <- n[i] * lambda + noise[i]
     if(n[i+1] <= 0) { # start of if statement
       n[i+1] <- NA
-      cat('population extinction at time', i-1, '\n')
+      cat('population extinction at time', i, '\n')
       tkbell()
       break } # end of if statement
   } # end of the the for loop
@@ -158,11 +158,38 @@ ran_walk <- function(times=100,
 
 # -----------------------------------
 
+# explore model parameters interactively
+# with simple graphics
 
+pop <- ran_walk()
+qplot(x=1:100, y=pop,geom="line")
 
+# check out performance with no noise
+pop <- ran_walk(noise_sd=5, lambda = .98)
+qplot(x=1:100, y=pop,geom="line")
 
+# double for loops ------------------------------
 
+m <- matrix(round(runif(20),digits=2),nrow=5)
 
+# loop ofer the rows
+for (i in 1:nrow(m)) {
+  m[i,] <- m[i,] + i
+}
+print(m)
 
+m <- matrix(round(runif(20),digits=2),nrow=5)
+# loop over columns
+for (j in 1:ncol(m)) {
+  m[,j] <- m[,j] + j
+}
+print(m)
 
-
+# loop over rows and columns with double for loop
+m <- matrix(round(runif(20),digits=2),nrow=5)
+for (i in 1:row(m)) { # start of outer loop
+  for (j in 1:ncol(m)) { # star of inner loop
+    m[i,j] <- m[i,j] + i + j
+  } # end of inner ( column ) loop
+} # end of outer ( row ) loop
+print(m)
